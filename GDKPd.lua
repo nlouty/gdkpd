@@ -1552,6 +1552,7 @@ function balance:Update()
 		local f = self.entries[c]
 		f:Show()
 		f.amount:SetAmount(GDKPd_PotData.playerBalance[(UnitName("NPC"))])
+		MoneyInputFrame_SetCopper(TradePlayerInputMoneyFrame, (GDKPd_PotData.playerBalance[(UnitName("NPC"))]*10000));
 		f.name:SetText((UnitName("NPC")))
 		f:UpdateHeight()
 		isWidthIncreased = f.mail:UpdateState() or isWidthIncreased
