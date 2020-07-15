@@ -1383,7 +1383,7 @@ version.request = CreateFrame("Button", nil, version, "UIPanelButtonTemplate")
 version.request:SetSize(170,15)
 version.request:SetPoint("BOTTOM", version.notify, "TOP", 0, 5)
 version.request:SetText(L["Request version data"])
-version.request:SetScript("OnClick", function() GDKPd.hasRequestedData = true SendAddonMessage("GDKPD VREQ","","RAID") end)
+version.request:SetScript("OnClick", function() GDKPd.hasRequestedData = true SendAddonMessage("GDKPD VREQ","poptix","RAID") end)
 function version:Update()
 	if not GDKPd.hasRequestedData then return end
 	for _, f in ipairs(self.entries) do
