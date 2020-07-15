@@ -3434,6 +3434,7 @@ GDKPd:RegisterEvent("UI_INFO_MESSAGE")
 GDKPd:RegisterEvent("TRADE_CLOSED")
 GDKPd:RegisterEvent("TRADE_SHOW")
 GDKPd:RegisterEvent("TRADE_ACCEPT_UPDATE")
+GDKPd:RegisterEvent("PLAYER_TRADE_MONEY")
 GDKPd:RegisterEvent("PLAYER_REGEN_ENABLED")
 GDKPd:RegisterEvent("PLAYER_REGEN_DISABLED")
 GDKPd:RegisterEvent("MAIL_SHOW")
@@ -3500,8 +3501,8 @@ do
 end
 --end raid warning frame filter
 --register addon msg prefixes
-RegisterAddonMessagePrefix("GDKPD START")
-RegisterAddonMessagePrefix("GDKPD VREQ")
-RegisterAddonMessagePrefix("GDKPD VDATA")
-RegisterAddonMessagePrefix("GDKPD MANADJ")
+C_ChatInfo.RegisterAddonMessagePrefix("GDKPD START")
+C_ChatInfo.RegisterAddonMessagePrefix("GDKPD VREQ")
+C_ChatInfo.RegisterAddonMessagePrefix("GDKPD VDATA")
+C_ChatInfo.RegisterAddonMessagePrefix("GDKPD MANADJ")
 --prefixes done
