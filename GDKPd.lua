@@ -1792,7 +1792,7 @@ export.toggleBB:SetScript("OnClick", function() export:SetType('BB') end)
 export.toggleDefault = CreateFrame("Button", nil, export, "UIPanelButtonTemplate")
 export.toggleDefault:SetSize(150,20)
 export.toggleDefault:SetPoint("RIGHT",export.toggleBB,"LEFT")
-export.toggleDefault:SetText("Plain text")
+export.toggleDefault:SetText("Tab Delimited")
 export.toggleDefault:SetScript("OnClick", function() export:SetType('Default') end)
 
 export.toggleBN = CreateFrame("Button", nil, export, "UIPanelButtonTemplate")
