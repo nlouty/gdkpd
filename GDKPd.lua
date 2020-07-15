@@ -1810,7 +1810,7 @@ function export:Update()
 			elseif self.exportType == "BN" then
 				text = text.."\n[item=\""..aucdata.item:match("|Hitem:(%d+):").."\" /]: "..aucdata.name.." ("..aucdata.bid.." gold)"
 			else
-				text = text.."\n"..(aucdata.item:match("(|h.+|h)"))..": "..aucdata.name.." ("..aucdata.bid.." gold)"
+				text = text.."\n=HYPERLINK(\"http://classic.wowhead.com/item="..(aucdata.item:match("|Hitem:(%d+):")).."\",\""..aucdata.item:match("(|h.+|h)").."\")\t"..aucdata.name.."\t"..aucdata.bid
 			end
 		else
 			text = text.."\n"..L["Manual adjustment"]..": "..(aucdata > 0 and "+" or "")..aucdata.." gold"
@@ -3370,7 +3370,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 		self.tradeMoneyOther = GetTargetTradeMoney()/10000
 	end
 	if (event == "UI_INFO_MESSAGE") then
-		if arg[1] == ERR_TRADE_COMPLETE then
+		if arg[2] == ERR_TRADE_COMPLETE then
 			--if self:PlayerIsML((UnitName("player")),true) and GDKPd_PotData.playerBalance[self.tradePartner] ~= 0 then
 			if self:PlayerIsML((UnitName("player")),true) then
 				if GDKPd_PotData.playerBalance[self.tradePartner] ~= 0 then
