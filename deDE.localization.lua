@@ -52,12 +52,12 @@ L["GDKPd auction history for %s"] = "GDKPd Auktionsverlauf für %s"
 L[ [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ] = [=[GDKPd: Frei beweglich
 /gdkpd und "Sperren", um zu verstecken]=]
-L["[GDKPd] Loot dropped: "] = "[GDKPd] Beute:"
+L["Loot dropped: "] = "Beute:"
 L["GDKPd: No detailed data available"] = "GDKPd: Keine Details verfügbar"
-L["[GDKPd] This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd] Dieser Schlachtzug verwendet GDKPd für seine Item-Auktionen! Man kann zwar auf Items bieten ohne GDKPd zu installieren, aber das AddOn bietet ein Biet-GUI, automatisches Bieten, Auktionstimer, Chatfilter und vieles mehr!"
+L["This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "Dieser Schlachtzug verwendet GDKPd für seine Item-Auktionen! Man kann zwar auf Items bieten ohne GDKPd zu installieren, aber das AddOn bietet ein Biet-GUI, automatisches Bieten, Auktionstimer, Chatfilter und vieles mehr!"
 L["GDKPd version %s. Packaged %s."] = "GDKPd Version %s. Erstellt %s."
-L["[GDKPd] Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd] Deine Version von GDKPd ist veraltet und nicht mehr mit der des Schlachtzugleiters kompatibel. Um glatte Abläufe zu garantieren, ist es empfohlen, GDKPd zu aktualisieren."
-L["[GDKPd] Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd] Deine Version von GDKPd ist leicht veraltet, allerdings noch mit der des Schlachtzugleiters kompatibel. Du könntest allerdings dir etwas Zeit nehmen und GDKPd aktualisieren."
+L["Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "Deine Version von GDKPd ist veraltet und nicht mehr mit der des Schlachtzugleiters kompatibel. Um glatte Abläufe zu garantieren, ist es empfohlen, GDKPd zu aktualisieren."
+L["Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "Deine Version von GDKPd ist leicht veraltet, allerdings noch mit der des Schlachtzugleiters kompatibel. Du könntest allerdings dir etwas Zeit nehmen und GDKPd aktualisieren."
 L["Hide"] = "Verstecken"
 L["Hide 'Auction cancelled' announcements"] = "\"Auktion abgebrochen\"-Nachrichten verstecken"
 L["Hide 'Auction cancelled' announcements from raid warning"] = "\"Auktion abgebrochen\"-Nachrichten aus der Schlachtzugswarnung verstecken"

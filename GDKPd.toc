@@ -1,11 +1,11 @@
 ## Interface: 50400
 ## Title: GDKPd
 ## Notes: Simplifies GDKP bidding processes
-## Author: stolenlegacy
+## Author: poptix
 ## SavedVariables: GDKPd_DB, GDKPd_PotData, GDKPd_BalanceData
 ## OptionalDeps: LibStub, Ace3, CallbackHandler-1.0
 #@no-lib-strip@
-## X-Curse-Packaged-Version: 1.4.2
+## X-Curse-Packaged-Version: 2.0.0 
 ## X-Curse-Project-Name: GDKPd
 ## X-Curse-Project-ID: gdkpd
 ## X-Curse-Repository-ID: wow/gdkpd/mainline

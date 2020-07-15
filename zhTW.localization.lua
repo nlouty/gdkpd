@@ -55,13 +55,13 @@ L["GDKPd auction history for %s"] = "GDKPd對 %s 的拍賣記錄"
 L[ [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ] = [=[GDKPd: 拖拽進行移動
 /gdkpd 命令，選中 "鎖定" 以隱藏]=] -- Needs review
-L["[GDKPd] Loot dropped: "] = "[GDKPd]物品掉落:"
+L["Loot dropped: "] = "[GDKPd]物品掉落:"
 L["GDKPd: No detailed data available"] = "GDKPd: 無可用的詳細數據"
-L["[GDKPd] This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd]本團隊使用GDKPd來輔助拍賣.你也可以在未安裝GDKPd的情況進行出價,安裝本插件將可以使用出價面板,自動出價,拍賣計時器,聊天過濾等多種功能!"
+L["This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd]本團隊使用GDKPd來輔助拍賣.你也可以在未安裝GDKPd的情況進行出價,安裝本插件將可以使用出價面板,自動出價,拍賣計時器,聊天過濾等多種功能!"
 L["GDKPd version %s. Packaged %s."] = [=[GKPd版本 %s. 封裝 %s.
 ]=] -- Needs review
-L["[GDKPd] Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd]你的GDKPd版本過期且多項功能無法與團長使用的版本兼容.爲了確保正常使用,請升級GDKPd."
-L["[GDKPd] Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd]你的GDKPd版本比團長的版本稍低.也許可以與團長的版本兼容,然而你有必要花些時間升級你的GDKPd."
+L["Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd]你的GDKPd版本過期且多項功能無法與團長使用的版本兼容.爲了確保正常使用,請升級GDKPd."
+L["Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd]你的GDKPd版本比團長的版本稍低.也許可以與團長的版本兼容,然而你有必要花些時間升級你的GDKPd."
 L["Hide"] = "隱藏"
 L["Hide 'Auction cancelled' announcements"] = "隱藏'拍賣已取消'的通告" -- Needs review
 L["Hide 'Auction cancelled' announcements from raid warning"] = "在團隊警告中隱藏'拍賣已取消'的通告" -- Needs review

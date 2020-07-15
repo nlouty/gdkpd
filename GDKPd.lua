@@ -18,7 +18,7 @@ local emptytable = select(2,...).emptytable
 local DEBUGFORCEVERSION
 
 --[===[@debug@
-DEBUGFORCEVERSION="1.4.2"
+DEBUGFORCEVERSION="2.0.0"
 --@end-debug@]===]
 -- fetch locale data
 local L = LibStub("AceLocale-3.0"):GetLocale("GDKPd")
@@ -31,82 +31,9 @@ local VERSIONING_STRINGS = {
 	INCOMPATIBLE_VERSIONCHECK = L["This version will be unable to recognize version check requests by you. Version check requests sent by this version of GDKPd will not be answered."],
 }
 local COMPATIBLE_VERSIONS = {
-	["1.4.2"]=true,
-	["beta-18"]=true,
-	["1.4.1"]=true,
-	["beta-17a"]=true,
-	["beta-17"]=true,
-	["1.4.0"]=true,
-	["beta-16"]=true,
-	["1.3.0"]=true,
-	["beta-15b"]=true,
-	["beta-15a"]=true,
-	["beta-15"]=true,
-	["1.2.0"]=true,
+	["2.0.0"]=true,
 }
 local INCOMPATIBLE_VERSIONS = {
-	["1.1.4"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14f"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14e"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14d"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["1.1.3"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14c"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["1.1.2"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["1.1.1"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14b"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14a"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-14"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["1.1.0"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-13c"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-13b"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-13a"]={"INCOMPATIBLE_VERSIONCHECK"},
-	["beta-13"]={"VERSION_NONFUNCTIONAL"},
-	["beta-12"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["1.0.0a"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["1.0.0"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11s"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11r"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11q"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11p"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11o"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11m"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11l"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11i"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11h"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11g"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11f"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11e"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11d"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11c"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11b"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11a"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11"]={"INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11n"]={"VERSION_NONFUNCTIONAL"},
-	["beta-11k"]={"INCOMPATIBLE_DISTRIBUTE","INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-11j"]={"INCOMPATIBLE_DISTRIBUTE","INCOMPATIBLE_AUCTIONCANCEL"},
-	["beta-10h"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10g"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10f"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10e"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10d"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10c"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10b"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10a"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-10"]={"VERSION_NONFUNCTIONAL"},
-	["beta-9a"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-9"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-8"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-7b"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-7a"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-7"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-6"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-5"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-4"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-3"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-2b"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-2a"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-2"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
-	["beta-1a"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
 	["beta-1"]={"INCOMPATIBLE_AUCTIONSTART","INCOMPATIBLE_AUCTIONCANCEL","INCOMPATIBLE_DISTRIBUTE"},
 }
 
@@ -1382,7 +1309,7 @@ version.entries = setmetatable({},{__index=function(t,v)
 			self:UpdateHeight()
 			return
 		end
-		if versionstring == (DEBUGFORCEVERSION or "1.4.2") then
+		if versionstring == (DEBUGFORCEVERSION or "2.0.0") then
 			f.version:SetTextColor(0,0.8,0)
 			f.name:SetText(name)
 			f.version:SetText(versionstring)
@@ -3093,7 +3020,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					print(L["Cannot start auction without Master Looter privileges."])
 				end
 			elseif input:lower() == "ver" then
-				print(L["GDKPd version %s. Packaged %s."]:format(DEBUGFORCEVERSION or "1.4.2","2014-10-27T11:44:40Z"))
+				print(L["GDKPd version %s. Packaged %s."]:format(DEBUGFORCEVERSION or "2.0.0","2014-10-27T11:44:40Z"))
 			elseif input:lower() == "history" then
 				GDKPd.history:Show()
 			elseif input:lower() == "wipe" then
@@ -3119,19 +3046,19 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 		local msg,sender = arg[1],pruneCrossRealm(arg[2])
 		--this is code for single-auction mode. put into a do branch to avoid local clashes.
 		do
-			local itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL: (%d+)/(%d+)")
+			local itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL: (%d+)/(%d+)")
 			if not itemLink then
 				-- backwards comp number three
-				itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL until expire: (%d+) seconds, TTL after bid: (%d+) seconds.")
+				itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL until expire: (%d+) seconds, TTL after bid: (%d+) seconds.")
 			end
 			if not itemLink then
 				-- backwords compability strikes again
-				itemLink, minBid, bidIncrement, auctionTimer = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL after a bid is placed: (%d+) seconds.")
+				itemLink, minBid, bidIncrement, auctionTimer = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold. TTL after a bid is placed: (%d+) seconds.")
 				auctionTimerRefresh=auctionTimer
 			end
 			if not itemLink then
 				-- backwards version compability
-				itemLink, minBid, bidIncrement = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold.")
+				itemLink, minBid, bidIncrement = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, starting bid (%d+) gold, minimum increment (%d+) gold.")
 				auctionTimer = 0
 				auctionTimerRefresh=0
 			end
@@ -3180,7 +3107,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					self.curAuction.timeRemains = math.max(self.opt.auctionTimerRefresh, self.curAuction.timeRemains)
 				end
 			end
-			local bidderName, newBid = string.match(msg, "%[GDKPd%] New highest bidder: (%S+) %((%d+) gold%)")
+			local bidderName, newBid = string.match(msg, "New highest bidder: (%S+) %((%d+) gold%)")
 			if bidderName and self.InProgressBidFrame then
 				local isSelf = pruneCrossRealm(bidderName) == (UnitName("player"))
 				self.InProgressBidFrame:SetCurBid(newBid, bidderName, isSelf)
@@ -3194,11 +3121,11 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					end
 				end
 			end
-			if msg:find("%[GDKPd%] Auction finished.") and GDKPd:PlayerIsML(sender,false) and self.InProgressBidFrame then
+			if msg:find("Auction finished.") and GDKPd:PlayerIsML(sender,false) and self.InProgressBidFrame then
 				self.InProgressBidFrame:Hide()
 				self.InProgressBidFrame.isActive = false
 				self.InProgressBidFrame = nil
-				local winnerName, paymentString = msg:match("%[GDKPd%] Auction finished. Winner: (%S+). (.+).")
+				local winnerName, paymentString = msg:match("Auction finished. Winner: (%S+). (.+).")
 				if winnerName then
 					if pruneCrossRealm(winnerName) == (UnitName("player")) then
 						for targetAmount, targetName in paymentString:gmatch("(%d+) to (%S+)[%.,]") do
@@ -3226,7 +3153,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					end
 				end
 			end
-			if msg:find("%[GDKPd%] Auction cancelled.") and GDKPd:PlayerIsML(sender, false) and self.InProgressBidFrame then
+			if msg:find("Auction cancelled.") and GDKPd:PlayerIsML(sender, false) and self.InProgressBidFrame then
 				self.InProgressBidFrame.isActive = false
 				if GDKPd:PlayerIsML((UnitName("player")),true) then
 					local f = self.InProgressBidFrame
@@ -3246,13 +3173,13 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 		end
 		-- this is new code for multi-auction. slight variations are used rl-side to indicate this.
 		do
-			local itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Bid using format '%[item%] 1000', starting bid (%d+) gold, minimum increment (%d+) gold. TTL: (%d+)/(%d+)")
+			local itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Bid using format '%[item%] 1000', starting bid (%d+) gold, minimum increment (%d+) gold. TTL: (%d+)/(%d+)")
 			if not itemLink then
 				-- backwards to non-shortened
-				itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Bid using format '%[item%] 1000', starting bid (%d+) gold, minimum increment (%d+) gold. TTL until expire: (%d+) seconds, TTL after bid: (%d+) seconds.")
+				itemLink, minBid, bidIncrement, auctionTimer, auctionTimerRefresh = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Bid using format '%[item%] 1000', starting bid (%d+) gold, minimum increment (%d+) gold. TTL until expire: (%d+) seconds, TTL after bid: (%d+) seconds.")
 			end
 			if not itemLink then
-				itemLink, minBid, bidIncrement, auctionTimer = string.match(msg, "%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, using format 'itemlink bid'. Starting bid (%d+) gold, minimum increment (%d+) gold. TTL after a bid is placed: (%d+) seconds.")
+				itemLink, minBid, bidIncrement, auctionTimer = string.match(msg, "Bidding starts on (|c........|Hitem:.+|r). Please bid in raid chat, using format 'itemlink bid'. Starting bid (%d+) gold, minimum increment (%d+) gold. TTL after a bid is placed: (%d+) seconds.")
 				auctionTimerRefresh = auctionTimer
 			end
 			auctionTimer = tonumber(auctionTimer) or 0
@@ -3303,7 +3230,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					end
 				end
 			end
-			local bidItem, bidderName, newBid = string.match(msg, "%[GDKPd%] New highest bidder on (|c........|Hitem:.+|r): (%S+) %((%d+) gold%)")
+			local bidItem, bidderName, newBid = string.match(msg, "New highest bidder on (|c........|Hitem:.+|r): (%S+) %((%d+) gold%)")
 			if bidderName and self:FetchFrameFromLink(bidItem) then
 				local isSelf = pruneCrossRealm(bidderName) == (UnitName("player"))
 				local bidFrame = self:FetchFrameFromLink(bidItem)
@@ -3318,12 +3245,12 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					end
 				end
 			end
-			local auctionEndItem = msg:match("%[GDKPd%] Auction finished for (|c........|Hitem:.+|r).")
+			local auctionEndItem = msg:match("Auction finished for (|c........|Hitem:.+|r).")
 			if auctionEndItem and GDKPd:PlayerIsML(sender,false) and self:FetchFrameFromLink(auctionEndItem) then
 				local f = self:FetchFrameFromLink(auctionEndItem)
 				f.isActive = false
 				f:Hide()
-				local winnerName, paymentString = msg:match("%[GDKPd%] Auction finished for |c........|Hitem:.+|r%. Winner: (%S+)%. (.+)")
+				local winnerName, paymentString = msg:match("Auction finished for |c........|Hitem:.+|r%. Winner: (%S+)%. (.+)")
 				if winnerName then
 					if pruneCrossRealm(winnerName) == (UnitName("player")) then
 						for targetAmount, targetName in paymentString:gmatch("(%d+) to (%S+)[%.,]") do
@@ -3351,7 +3278,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 					end
 				end
 			end
-			local auctionCancelItem = msg:match("%[GDKPd%] Auction cancelled for (|c........|Hitem:.+|r)%.")
+			local auctionCancelItem = msg:match("Auction cancelled for (|c........|Hitem:.+|r)%.")
 			if auctionCancelItem and GDKPd:PlayerIsML(sender, false) and self:FetchFrameFromLink(auctionCancelItem) then
 				local f = self:FetchFrameFromLink(auctionCancelItem)
 				f.isActive = false
@@ -3371,9 +3298,9 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 		end
 		-- generic code for both auction modes
 		do
-			local potAmount = msg:match("%[GDKPd%] Distributing pot. Pot size: %d+ gold. Amount to distribute: %d+ gold. Players in raid: %d+. Share per player: (%d+) gold.")
+			local potAmount = msg:match("Distributing pot. Pot size: %d+ gold. Amount to distribute: %d+ gold. Players in raid: %d+. Share per player: (%d+) gold.")
 			if not potAmount then
-				potAmount = msg:match("%[GDKPd%] Distributing pot. Pot size: %d+ gold. Players in raid: %d+. Pot share per player: (%d+) gold.")
+				potAmount = msg:match("Distributing pot. Pot size: %d+ gold. Players in raid: %d+. Pot share per player: (%d+) gold.")
 			end
 			if potAmount and self:PlayerIsML(sender,false) then
 				GDKPd_BalanceData[sender] = GDKPd_BalanceData[sender]-potAmount
@@ -3393,7 +3320,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 				end
 			end
 			if arg[1] == "GDKPD VREQ" then
-				SendAddonMessage("GDKPD VDATA", DEBUGFORCEVERSION or "1.4.2", "WHISPER", arg[4])
+				SendAddonMessage("GDKPD VDATA", DEBUGFORCEVERSION or "2.0.0", "WHISPER", arg[4])
 			end
 			if arg[1] == "GDKPD VDATA" then
 				self.versions[sender] = arg[2]
@@ -3522,13 +3449,13 @@ GDKPd:RegisterEvent("MAIL_CLOSED")
 --chat filters
 local function filterChat_CHAT_MSG_RAID(chatframe,event,msg)
 	--auctionAnnounce newBid bidFinished
-	if GDKPd.opt.hideChatMessages.auctionAnnounce and msg:match("%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r).")  then
+	if GDKPd.opt.hideChatMessages.auctionAnnounce and msg:match("Bidding starts on (|c........|Hitem:.+|r).")  then
 		return true
 	end
-	if GDKPd.opt.hideChatMessages.newBid and msg:match("%[GDKPd%] New highest bidder(.*): (%S+) %((%d+) gold%)") then
+	if GDKPd.opt.hideChatMessages.newBid and msg:match("New highest bidder(.*): (%S+) %((%d+) gold%)") then
 		return true
 	end
-	if GDKPd.opt.hideChatMessages.bidFinished and msg:match("%[GDKPd%] Auction finished") then
+	if GDKPd.opt.hideChatMessages.bidFinished and msg:match("Auction finished") then
 		return true
 	end
 	if GDKPd.opt.hideChatMessages.secondsRemaining and msg:match("[Caution] (%d+) seconds remaining(.*)!") then
@@ -3537,10 +3464,10 @@ local function filterChat_CHAT_MSG_RAID(chatframe,event,msg)
 	if GDKPd.opt.hideChatMessages.bidChats and (((msg:match("%d+") and (not msg:match("seconds remaining"))) and (GDKPd.InProgressBidFrame or GDKPd.curAuction.item)) or (msg:match("(|c........|Hitem:.+|r)%s*(%d+)") and (GDKPd:FetchFrameFromLink(msg:match("(|c........|Hitem:.+|r)")) or GDKPd.curAuctions[msg:match("(|c........|Hitem:.+|r)")]))) then
 		return true
 	end
-	if GDKPd.opt.hideChatMessages.potValues and msg:match("%[GDKPd%] Current pot: (%d+) gold") then
+	if GDKPd.opt.hideChatMessages.potValues and msg:match("Current pot: (%d+) gold") then
 		return true
 	end
-	if GDKPd.opt.hideChatMessages.auctionCancel and msg:match("%[GDKPd%] Auction cancelled") then
+	if GDKPd.opt.hideChatMessages.auctionCancel and msg:match("Auction cancelled") then
 		return true
 	end
 	return false
@@ -3566,13 +3493,13 @@ do
 	-- GLOBALS: RaidNotice_AddMessage
 	local oldmessage = RaidNotice_AddMessage
 	function RaidNotice_AddMessage(frame,text,...)
-		if GDKPd.opt.hideChatMessages.auctionAnnounceRW and text:match("%[GDKPd%] Bidding starts on (|c........|Hitem:.+|r).") then
+		if GDKPd.opt.hideChatMessages.auctionAnnounceRW and text:match("Bidding starts on (|c........|Hitem:.+|r).") then
 			return
 		end
-		if GDKPd.opt.hideChatMessages.auctionCancelRW and text:match("%[GDKPd%] Auction cancelled") then
+		if GDKPd.opt.hideChatMessages.auctionCancelRW and text:match("Auction cancelled") then
 			return
 		end
-		if GDKPd.opt.hideChatMessages.newBid and text:match("%[GDKPd%] New highest bidder(.*): (%S+) %((%d+) gold%)") then
+		if GDKPd.opt.hideChatMessages.newBid and text:match("New highest bidder(.*): (%S+) %((%d+) gold%)") then
 			return
 		end
 		oldmessage(frame,text,...)

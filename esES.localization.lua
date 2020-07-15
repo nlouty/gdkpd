@@ -53,12 +53,12 @@ L["GDKPd auction history for %s"] = "Historial de subastas GDKPd por %s"
 --[==[ L[ [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ] = [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ]==]
-L["[GDKPd] Loot dropped: "] = "[GDKPd] Loot caído:"
+L["Loot dropped: "] = "Loot caído:"
 L["GDKPd: No detailed data available"] = "GDKPd: Sin datos disponibles" -- Needs review
-L["[GDKPd] This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd] Esta raid usa GDKPd para facilitar sus procesos de subasta GDKP. Aunque puedas pujar en objetos sin tener GDKPd instalado, instalarlo te provee de un panel GUI de pujas, funciones de auto pujas, cronómetros de subasta, filtros de chat ¡y más!"
+L["This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "Esta raid usa GDKPd para facilitar sus procesos de subasta GDKP. Aunque puedas pujar en objetos sin tener GDKPd instalado, instalarlo te provee de un panel GUI de pujas, funciones de auto pujas, cronómetros de subasta, filtros de chat ¡y más!"
 -- L["GDKPd version %s. Packaged %s."] = "GDKPd version %s. Packaged %s."
-L["[GDKPd] Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd] Tu versión de GDKPd está desactualizada y no es compatible con la del líder de banda en una o más funciones. Para asegurar un funcionamiento preciso, por favor, actualiza GDKP."
-L["[GDKPd] Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd] Tu versión de GDKPd está ligeramente desactualizada comparada con la del líder de banda. Compatibilidad completa podría ser posible, sin embargo convendría que busques algo de tiempo y actualices GDKPd."
+L["Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "Tu versión de GDKPd está desactualizada y no es compatible con la del líder de banda en una o más funciones. Para asegurar un funcionamiento preciso, por favor, actualiza GDKP."
+L["Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "Tu versión de GDKPd está ligeramente desactualizada comparada con la del líder de banda. Compatibilidad completa podría ser posible, sin embargo convendría que busques algo de tiempo y actualices GDKPd."
 L["Hide"] = "Ocultar"
 L["Hide 'Auction cancelled' announcements"] = "Ocultar anuncios de 'Subasta cancelada'"
 L["Hide 'Auction cancelled' announcements from raid warning"] = "Ocultar anuncios de 'Subasta cancelada' de los avisos de raid"

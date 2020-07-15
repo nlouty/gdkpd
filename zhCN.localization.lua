@@ -55,12 +55,12 @@ L["GDKPd auction history for %s"] = "GDKPd对 %s 的拍卖记录"
 L[ [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ] = [=[GDKPd: 拖拽进行移动
 /gdkpd 命令，选中 "锁定" 以隐藏]=] -- Needs review
-L["[GDKPd] Loot dropped: "] = "[GDKPd]物品掉落:"
+L["Loot dropped: "] = "[GDKPd]物品掉落:"
 L["GDKPd: No detailed data available"] = "GDKPd: 无可用的详细数据"
-L["[GDKPd] This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd]本团队使用GDKPd来辅助拍卖.你也可以在未安装GDKPd的情况进行出价,安装本插件将可以使用出价面板,自动出价,拍卖计时器,聊天过滤等多种功能!"
+L["This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = "[GDKPd]本团队使用GDKPd来辅助拍卖.你也可以在未安装GDKPd的情况进行出价,安装本插件将可以使用出价面板,自动出价,拍卖计时器,聊天过滤等多种功能!"
 L["GDKPd version %s. Packaged %s."] = "GDKPd版本 %s. 打包于 %s."
-L["[GDKPd] Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd]你的GDKPd版本过期且多项功能无法与团长使用的版本兼容.为了确保正常使用,请升级GDKPd."
-L["[GDKPd] Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd]你的GDKPd版本比团长的版本稍低.也许可以与团长的版本兼容,然而你有必要花些时间升级你的GDKPd."
+L["Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = "[GDKPd]你的GDKPd版本过期且多项功能无法与团长使用的版本兼容.为了确保正常使用,请升级GDKPd."
+L["Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = "[GDKPd]你的GDKPd版本比团长的版本稍低.也许可以与团长的版本兼容,然而你有必要花些时间升级你的GDKPd."
 L["Hide"] = "隐藏"
 L["Hide 'Auction cancelled' announcements"] = "隐藏'拍卖已取消'的通告"
 L["Hide 'Auction cancelled' announcements from raid warning"] = "在团队警告中隐藏'拍卖已取消'的通告"

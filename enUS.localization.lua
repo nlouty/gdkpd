@@ -53,12 +53,12 @@ L["GDKPd auction history"] = true
 L["GDKPd auction history for %s"] = true
 L[ [=[GDKPd: Drag to move
 /gdkpd and check "Lock" to hide]=] ] = true
-L["[GDKPd] Loot dropped: "] = true
+L["Loot dropped: "] = true
 L["GDKPd: No detailed data available"] = true
-L["[GDKPd] This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = true
+L["This raid uses GDKPd to faciliate its GDKP bidding process. While you can bid on items without having GDKPd installed, installing it provides you with a GUI bidding panel, auto bidding functions, auction timers, chat filtering and more!"] = true
 L["GDKPd version %s. Packaged %s."] = true
-L["[GDKPd] Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = true
-L["[GDKPd] Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = true
+L["Your version of GDKPd is outdated and no longer compatible with the raid leader's in one or more functionalities. In order to ensure smooth performance, please update GDKPd."] = true
+L["Your version of GDKPd is slightly outdated compared to the raid leader's. Full compability should be possible, however, you might want to take some time and update GDKPd."] = true
 L["Hide"] = true
 L["Hide 'Auction cancelled' announcements"] = true
 L["Hide 'Auction cancelled' announcements from raid warning"] = true
