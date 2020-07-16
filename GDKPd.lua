@@ -437,8 +437,8 @@ local status = GDKPd.status
 status:SetSize(200, 90)
 status:Hide()
 status:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -460,7 +460,7 @@ function status:UpdateVisibility(forceCombat)
 	end
 end
 status.header = CreateFrame("Button", nil, status)
-status.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+status.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 status.header:SetSize(133,34)
 status.header.text = status.header:CreateFontString()
 status.header.text:SetPoint("TOP",0,-7)
@@ -640,8 +640,8 @@ local history = GDKPd.history
 history:SetSize(200,95)
 history:Hide()
 history:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -652,7 +652,7 @@ history:SetBackdrop({
 	},
 })
 history.header = CreateFrame("Button", nil, history)
-history.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+history.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 history.header:SetSize(133,34)
 history.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 history.header.text = history.header:CreateFontString()
@@ -789,8 +789,8 @@ local itemsettings = GDKPd.itemsettings
 itemsettings:SetWidth(250)
 itemsettings:Hide()
 itemsettings:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -801,7 +801,7 @@ itemsettings:SetBackdrop({
 	},
 })
 itemsettings.header = CreateFrame("Button", nil, itemsettings)
-itemsettings.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+itemsettings.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 itemsettings.header:SetSize(133,34)
 itemsettings.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 itemsettings.header.text = itemsettings.header:CreateFontString()
@@ -1029,8 +1029,8 @@ local itemlevels = GDKPd.itemLevels
 itemlevels:SetWidth(250)
 itemlevels:Hide()
 itemlevels:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -1041,7 +1041,7 @@ itemlevels:SetBackdrop({
 	},
 })
 itemlevels.header = CreateFrame("Button", nil, itemlevels)
-itemlevels.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+itemlevels.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 itemlevels.header:SetSize(133,34)
 itemlevels.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 itemlevels.header.text = itemlevels.header:CreateFontString()
@@ -1236,8 +1236,8 @@ local version = GDKPd.version
 version:SetSize(200,85)
 version:Hide()
 version:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -1248,7 +1248,7 @@ version:SetBackdrop({
 	},
 })
 version.header = CreateFrame("Button", nil, version)
-version.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+version.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 version.header:SetSize(133,34)
 version.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 version.header.text = version.header:CreateFontString()
@@ -1413,8 +1413,8 @@ GDKPd.balance = CreateFrame("Frame", "GDKPd_PlayerBalance", status)
 local balance = GDKPd.balance
 balance:SetSize(200, 95)
 balance:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -1425,7 +1425,7 @@ balance:SetBackdrop({
 	},
 })
 balance.header = CreateFrame("Button", nil, balance)
-balance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+balance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 balance.header:SetSize(133,34)
 balance.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 balance.header.text = balance.header:CreateFontString()
@@ -1603,8 +1603,8 @@ GDKPd.playerBalance = CreateFrame("Frame", "GDKPd_PlayerBalance", UIParent)
 local playerBalance = GDKPd.playerBalance
 playerBalance:SetSize(200, 95)
 playerBalance:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -1615,7 +1615,7 @@ playerBalance:SetBackdrop({
 	},
 })
 playerBalance.header = CreateFrame("Button", nil, playerBalance)
-playerBalance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+playerBalance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 playerBalance.header:SetSize(133,34)
 playerBalance.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 playerBalance.header.text = playerBalance.header:CreateFontString()
@@ -1720,8 +1720,8 @@ GDKPd.exportframe = CreateFrame("Frame", "GDKPd_Export", UIParent)
 local export = GDKPd.exportframe
 export:Hide()
 export:SetBackdrop({
-	bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
-	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border",
+	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
+	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
 	tile=true,
 	insets={
@@ -1732,7 +1732,7 @@ export:SetBackdrop({
 	},
 })
 export.header = CreateFrame("Button", nil, export)
-export.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
+export.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 export.header:SetSize(133,34)
 export.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
 export.header.text = export.header:CreateFontString()
