@@ -440,12 +440,13 @@ status:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 function status:UpdateVisibility(forceCombat)
@@ -538,6 +539,7 @@ status.rules:SetScript("OnClick",function()
 	announceStrings:Release()
 end)
 status.rules:Disable()
+
 status.itemhistory = CreateFrame("Button", nil, status, "UIPanelButtonTemplate")
 status.itemhistory:SetSize(170, 15)
 status.itemhistory:SetPoint("TOPLEFT", status.rules, "BOTTOMLEFT")
@@ -609,7 +611,7 @@ status.noannounce:SetScript("OnClick", function(self)
 end)
 status.noannounce:Hide()
 function status:UpdateSize()
-	local height = 80
+	local height = 80 
 	height = height+status.text:GetHeight()
 	if status.announcetext:IsShown() then
 		height=height+status.announcetext:GetHeight()+5
@@ -643,12 +645,13 @@ history:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 history.header = CreateFrame("Button", nil, history)
@@ -792,12 +795,13 @@ itemsettings:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 itemsettings.header = CreateFrame("Button", nil, itemsettings)
@@ -1032,12 +1036,13 @@ itemlevels:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 itemlevels.header = CreateFrame("Button", nil, itemlevels)
@@ -1239,12 +1244,13 @@ version:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 version.header = CreateFrame("Button", nil, version)
@@ -1416,12 +1422,13 @@ balance:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 balance.header = CreateFrame("Button", nil, balance)
@@ -1446,11 +1453,6 @@ balance.header:SetScript("OnMouseUp", function(self)
 	end
 end)
 balance:SetPoint("TOP", balance.header, "TOP", 0, -6)
-balance.toggle = CreateFrame("Button", nil, balance, "UIPanelButtonTemplate")
-balance.toggle:SetSize(170,15)
-balance.toggle:SetPoint("TOP", 0, -15)
-balance.toggle:SetText(L["Toggle zero balance"])
-balance.toggle:SetScript("OnClick", function() GDKPd.opt.showZeroBalance = not GDKPd.opt.showZeroBalance GDKPd.balance:Update() end)
 balance:SetScript("OnShow", function(self)
 	self:Update()
 end)
@@ -1571,22 +1573,12 @@ function balance:Update()
 			size=size+f:GetHeight()+5
 		end
 	end
-	if GDKPd.opt.showZeroBalance then
-		for raidNum=1, GetNumGroupMembers() do
-			local name = UnitName("raid"..raidNum)
-			if GDKPd_PotData.playerBalance[name] == 0 then
-				local f = self.entries[c]
-				f:Show()
-				f.name:SetText(name)
-				f.amount:SetAmount(0)
-				f:UpdateHeight()
-				isWidthIncreased = f.mail:UpdateState() or isWidthIncreased
-				c = c+1
-				size=size+f:GetHeight()+5
-			end
-		end
-	end
 	self:SetHeight(size)
+	if size == 50 then
+		self:Hide()
+	else
+		self:Show()
+	end
 	if isWidthIncreased then
 		for _, f in ipairs(self.entries) do
 			f.mail:Show()
@@ -1606,12 +1598,13 @@ playerBalance:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 playerBalance.header = CreateFrame("Button", nil, playerBalance)
@@ -1723,12 +1716,13 @@ export:SetBackdrop({
 	bgFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Background",
 	edgeFile="Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
 	tileSize=32,
+	edgeSize=24,
 	tile=true,
 	insets={
-		top=12,
-		bottom=12,
-		right=12,
-		left=12,
+		top=6,
+		bottom=6,
+		right=6,
+		left=6,
 	},
 })
 export.header = CreateFrame("Button", nil, export)
@@ -2178,6 +2172,7 @@ function GDKPd:GetUnoccupiedFrame()
 	f:SetBackdrop({
 		bgFile="Interface\\Tooltips\\UI-Tooltip-Background",
 		tileSize=16,
+		edgeSize=24,
 		edgeFile="Interface\\Tooltips\\UI-Tooltip-Border",
 		tile=true,
 		edgeSize=16,
@@ -2490,7 +2485,6 @@ local defaults={profile={
 	},
 	forceHideShow=true,
 	countdownTimerJump=5,
-	showZeroBalance=false,
 	shareSecondEnable=false,
 	shareSecondAmount=0.33,
 	shareThirdEnable=false,
