@@ -3407,7 +3407,7 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 		self.status:UpdateVisibility(true)
 		self.playerBalance:UpdateVisibility(true)
 	end
-	if (event == "MAIL_SHOW") or (event == "MAIL_CLOSED") then
+	if (event == "MAIL_CLOSED") or (event == "MAIL_INBOX_UPDATE") then
 		self.balance:Update()
 	end
 	-- release table back into the pool of usable tables
@@ -3431,7 +3431,7 @@ GDKPd:RegisterEvent("TRADE_ACCEPT_UPDATE")
 GDKPd:RegisterEvent("PLAYER_TRADE_MONEY")
 GDKPd:RegisterEvent("PLAYER_REGEN_ENABLED")
 GDKPd:RegisterEvent("PLAYER_REGEN_DISABLED")
-GDKPd:RegisterEvent("MAIL_SHOW")
+GDKPd:RegisterEvent("MAIL_INBOX_UPDATE")
 GDKPd:RegisterEvent("MAIL_CLOSED")
 
 --chat filters
