@@ -1,4 +1,4 @@
-## Interface: 50400
+## Interface: 11303
 ## Title: GDKPd
 ## Notes: Simplifies GDKP bidding processes
 ## Author: poptix
