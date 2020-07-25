@@ -2126,9 +2126,18 @@ function GDKPd:DistributePot()
 	if not (numraid > 0) then return end
 	local distAmount = (GDKPd_PotData.potAmount or 0)-(GDKPd_PotData.prevDist or 0)
 	if distAmount <= 0 then return end
-	SendChatMessage(("Distributing pot. Pot size: %d gold. Amount to distribute: %d gold. Players in raid: %d. Share per player: %d gold."):format((GDKPd_PotData.potAmount or 0), distAmount, numraid, (distAmount or 0)/numraid),"RAID")
+	local numadditionalmemb = self.opt.AdditonalRaidMembersAmount
+	if self.opt.AdditionalRaidMembersEnable then
+		SendChatMessage(("Distributing pot. Pot size: %d gold. Amount to distribute: %d gold. Players in raid: %d(%d). Share per player: %d gold."):format((GDKPd_PotData.potAmount or 0), distAmount, numraid,numadditionalmemb, (distAmount or 0)/(numraid+numadditionalmemb)),"RAID")
+	else
+		SendChatMessage(("Distributing pot. Pot size: %d gold. Amount to distribute: %d gold. Players in raid: %d. Share per player: %d gold."):format((GDKPd_PotData.potAmount or 0), distAmount, numraid, (distAmount or 0)/numraid),"RAID")
+	end
 	for numRaid=1, numraid do
-		GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))] = GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))]+math.floor((distAmount or 0)/numraid)
+		if self.opt.AdditionalRaidMembersEnable then
+			GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))] = GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))]+math.floor((distAmount or 0)/(numraid+numadditionalmemb))
+		else
+			GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))] = GDKPd_PotData.playerBalance[(UnitName("raid"..numRaid))]+math.floor((distAmount or 0)/numraid)
+		end
 	end
 	GDKPd_PotData.prevDist = GDKPd_PotData.potAmount
 	GDKPd.balance:Update()
@@ -2489,11 +2498,13 @@ local defaults={profile={
 	shareSecondAmount=0.33,
 	shareThirdEnable=false,
 	shareThirdAmount=0.11,
-	auctionTimer=15,
-	auctionTimerRefresh=15,
+	AdditionalRaidMembers=false,
+	AdditonalRaidMembersAmount=0,
+	auctionTimer=20,
+	auctionTimerRefresh=20,
 	movable=true,
-	startBid=300,
-	increment=100,
+	startBid=20,
+	increment=5,
 	minQuality=-1,
 	autoAwardLoot=false,
 	awardToML=false,
@@ -2506,9 +2517,9 @@ local defaults={profile={
 	hideChatMessages={
 		auctionAnnounce=false,
 		auctionAnnounceRW=false,
-		newBid=true,
+		newBid=false,
 		bidFinished=false,
-		secondsRemaining=true,
+		secondsRemaining=false,
 		bidChats=false,
 		potValues=false,
 		auctionCancel=false,
@@ -2524,7 +2535,7 @@ local defaults={profile={
 	appearAlpha=1,
 	appearScale=1,
 	controlScale=1,
-	bidButtonReenableDelay=0.3,
+	bidButtonReenableDelay=0.2,
 	slimML=false,
 	slimMLConfirmed=false,
 	confirmMailAll=true,
@@ -2645,6 +2656,32 @@ GDKPd.options={
 						},
 					},
 				},
+				AdditionalRaidMembers={
+					dialogInline=true,
+					name=L["Additional Raid Members"],
+					order=5,
+					type="group",
+					args={
+						isEnabled={
+							order=1,
+							type="toggle",
+							name=L["Enable"],
+							set=function(info,value) GDKPd.opt.AdditionalRaidMembersEnable = value end,
+							get=function() return GDKPd.opt.AdditionalRaidMembersEnable end,
+						},
+						shareAmount={
+							order=2,
+							type="range",
+							name=L["Amount"],
+							min=0,
+							max=40,
+							step=1,
+							isPercent=false,
+							set=function(info, value) GDKPd.opt.AdditonalRaidMembersAmount = value end,
+							get=function() return GDKPd.opt.AdditonalRaidMembersAmount end,
+						},
+					},
+				},
 				minQuality={
 					type="select",
 					values=function()
@@ -2660,14 +2697,14 @@ GDKPd.options={
 					name=L["Minimum quality"],
 					set=function(info, value) GDKPd.opt.minQuality = value end,
 					get=function() return GDKPd.opt.minQuality end,
-					order=5,
+					order=6,
 					width="full",
 				},
 				auctionTimer={
 					type="range",
 					softMin=5,
 					softMax=30,
-					order=6,
+					order=7,
 					name=L["Auction timeout"],
 					desc=L["The amount of seconds that have to pass before the auction is closed without bids recieved"],
 					set=function(info, value) GDKPd.opt.auctionTimer = value end,
@@ -2677,7 +2714,7 @@ GDKPd.options={
 					type="range",
 					softMin=5,
 					softMax=30,
-					order=7,
+					order=8,
 					name=L["Auction bid timeout refresh"],
 					desc=L["The amount of seconds that have to pass after a bid before the auction is closed"],
 					set=function(info, value) GDKPd.opt.auctionTimerRefresh = value end,
@@ -2687,7 +2724,7 @@ GDKPd.options={
 					type="range",
 					softMin=1,
 					softMax=10,
-					order=7.5,
+					order=8.5,
 					name=L["Countdown timer announce interval"],
 					desc=L["The amount of seconds between each announcement of the remaining time"],
 					set=function(info, value) GDKPd.opt.countdownTimerJump = value end,
@@ -2699,7 +2736,7 @@ GDKPd.options={
 					set=function(info, value) GDKPd.opt.autoAwardLoot = value end,
 					get=function() return GDKPd.opt.autoAwardLoot end,
 					width="full",
-					order=8,
+					order=9,
 					disabled=function() return not not GDKPd.opt.awardToML end,
 				},
 				awardToML={
@@ -2708,7 +2745,7 @@ GDKPd.options={
 					set=function(info, value) GDKPd.opt.awardToML = value end,
 					get=function() return GDKPd.opt.awardToML end,
 					width="full",
-					order=9,
+					order=10,
 					disabled=function() return not not GDKPd.opt.autoAwardLoot end,
 				},
 				announceRW={
@@ -2717,7 +2754,7 @@ GDKPd.options={
 					set=function(info, value) GDKPd.opt.announceRaidWarning = value end,
 					get=function() return GDKPd.opt.announceRaidWarning end,
 					width="full",
-					order=10,
+					order=11,
 				},
 				announceRWBid={
 					type="toggle",
@@ -2725,7 +2762,7 @@ GDKPd.options={
 					width="full",
 					set=function(info, value) GDKPd.opt.announceBidRaidWarning = value end,
 					get=function() return GDKPd.opt.announceBidRaidWarning end,
-					order=11,
+					order=12,
 				},
 				allowMultiple={
 					type="toggle",
@@ -2734,7 +2771,7 @@ GDKPd.options={
 					set=function(info, value) GDKPd.opt.allowMultipleAuctions = value end,
 					get=function() return GDKPd.opt.allowMultipleAuctions end,
 					disabled=function() return ((GDKPd.curAuctions and (#GDKPd.curAuctions > 0)) or (GDKPd.curAuction.item)) end,
-					order=12,
+					order=13,
 				},
 				announcePotAfterAuction={
 					type="toggle",
@@ -2742,7 +2779,7 @@ GDKPd.options={
 					width="full",
 					set=function(info, value) GDKPd.opt.announcePotAfterAuction = value end,
 					get=function() return GDKPd.opt.announcePotAfterAuction end,
-					order=13,
+					order=14,
 				},
 				confirmMail={
 					type="toggle",
@@ -2750,7 +2787,7 @@ GDKPd.options={
 					width="full",
 					set=function(info, value) GDKPd.opt.confirmMail = value end,
 					get=function() return GDKPd.opt.confirmMail end,
-					order=14,
+					order=15,
 				},
 				linkBalancePot={
 					type="toggle",
@@ -2759,7 +2796,7 @@ GDKPd.options={
 					width="full",
 					set=function(info, value) GDKPd.opt.linkBalancePot = value end,
 					get=function() return GDKPd.opt.linkBalancePot end,
-					order=15,
+					order=16,
 				},
 			},
 			order=1,
