@@ -1,3 +1,28 @@
+commit be7ab66270c03155aacb1c8ddc8daa8e88eec35f
+Author: poptix <poptix@gmail.com>
+Date:   Sat Jul 25 01:16:24 2020 -0500
+
+    Give credit where credit is due. Bump interface version.
+
+commit 6572b7cd1aa248a2d53e0e7f2511d6cb7bdeba3a
+Author: poptix <poptix@gmail.com>
+Date:   Sat Jul 25 01:02:07 2020 -0500
+
+    Externals, Locale for extra share
+
+commit 4514c8ecb42b5e8dc7bd759671155813e3d99851
+Author: poptix <poptix@gmail.com>
+Date:   Sat Jul 25 00:24:20 2020 -0500
+
+    Set the correct interface version (even though it probably works in
+    retail too)
+
+commit a783f9ad08c09d497781fee718a627b8227d5bd2
+Author: poptix <poptix@gmail.com>
+Date:   Sat Jul 25 00:14:20 2020 -0500
+
+    Changelog.
+
 commit 47f8a59e1f56068078296a38975f348cc4a7606e
 Author: poptix <poptix@gmail.com>
 Date:   Fri Jul 24 23:41:26 2020 -0500
