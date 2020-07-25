@@ -147,3 +147,4 @@ What do you want to do with this pot?]=] ] = true
 L[ [=[You have selected the following pot:
 %s, dated %s, size %d gold.
 What do you want to do with this pot?]=] ] = true
+L["Additional Raid Members"] = true
