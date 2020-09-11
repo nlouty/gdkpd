@@ -6,8 +6,8 @@
 ## OptionalDeps: LibStub, Ace3, CallbackHandler-1.0
 #@no-lib-strip@
 ## X-Curse-Packaged-Version: 2.0.1 
-## X-Curse-Project-Name: GDKPd
-## X-Curse-Project-ID: gdkpdclassic
+## X-Curse-Project-Name: gdkpdclassic 
+## X-Curse-Project-ID: 397856
 LibStub\LibStub.lua
 CallbackHandler-1.0\CallbackHandler-1.0.xml
 AceDB-3.0\AceDB-3.0.xml
