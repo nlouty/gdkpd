@@ -3119,7 +3119,9 @@ GDKPd:SetScript("OnEvent", function(self, event, ...)
 				else
 					newBid = math.floor(newBid*1000)
 				end
-				if (self.curAuction.curBid + self.curAuction.increment) <= newBid then
+
+				-- Ignore obnoxiously large numbers, they break %d formats and are over gold cap anyway
+				if newBid < 999999999 and (self.curAuction.curBid + self.curAuction.increment) <= newBid then
 					GDKPd.curAuction.curBid = newBid
 					if GDKPd.curAuction.bidders[sender] then
 						GDKPd.curAuction.bidders[GDKPd.curAuction.bidders[sender]].bidAmount = newBid
