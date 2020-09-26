@@ -1887,7 +1887,7 @@ function GDKPd:AnnounceLoot(shouldQueueAuctions)
 	local playerName = (UnitName("player"))
 	for numLoot=1, GetNumLootItems() do
 		if LootSlotIsItem(numLoot) then
-			local tex, item, quantity, quality, isLocked = GetLootSlotInfo(numLoot)
+			local tex, item, quantity, currency, quality, isLocked = GetLootSlotInfo(numLoot)
 			if quality >= minQuality then
 				tinsert(lootList, GetLootSlotLink(numLoot))
 				if self.opt.awardToML then
