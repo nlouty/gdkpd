@@ -1,3 +1,39 @@
+commit 0095cefd2bb9cfd5b4adf12cf355d46ae8d65bcf
+Author: poptix <poptix@gmail.com>
+Date:   Sat Sep 26 03:53:31 2020 -0500
+
+    Fix GetLootSlotInfo return parameters, handle assholes
+
+commit 38b8434512874c9d625e32b6f56b22fce86bee88
+Author: poptix <poptix@gmail.com>
+Date:   Fri Sep 25 19:04:17 2020 -0500
+
+    Ignore obnoxiously large numbers
+
+commit 9a313d47cbde0ce70ca590ccc30d6080a072f782
+Author: poptix <poptix@gmail.com>
+Date:   Fri Sep 11 00:47:59 2020 -0500
+
+    2.0.3
+
+commit 4fcadf127d4c82cfbb3c0ee264d420b311fa7e88
+Author: poptix <poptix@gmail.com>
+Date:   Fri Sep 11 00:40:31 2020 -0500
+
+    Whitespace.
+
+commit 00a488ea48003b42ced00957b2750a380122721c
+Author: poptix <poptix@gmail.com>
+Date:   Fri Sep 11 00:35:13 2020 -0500
+
+    Fix toc to avoid twitch client issues
+
+commit e7b5c48cac8e38ef4b5d1d5313b3e5f694a8cf30
+Author: poptix <poptix@gmail.com>
+Date:   Sat Jul 25 01:16:52 2020 -0500
+
+    CHANGELOG
+
 commit be7ab66270c03155aacb1c8ddc8daa8e88eec35f
 Author: poptix <poptix@gmail.com>
 Date:   Sat Jul 25 01:16:24 2020 -0500
