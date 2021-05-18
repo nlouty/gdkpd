@@ -432,7 +432,7 @@ anchor.movetx.text = anchor:CreateFontString()
 anchor.movetx.text:SetFontObject(GameFontHighlightLarge)
 anchor.movetx.text:SetText(L["GDKPd: Drag to move\n/gdkpd and check \"Lock\" to hide"])
 anchor.movetx.text:SetAllPoints()
-GDKPd.status = CreateFrame("Frame", "GDKPd_Status", UIParent)
+GDKPd.status = CreateFrame("Frame", "GDKPd_Status", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local status = GDKPd.status
 status:SetSize(200, 90)
 status:Hide()
@@ -637,7 +637,7 @@ function status:Update()
 	end
 	self:UpdateSize()
 end
-GDKPd.history = CreateFrame("Frame", "GDKPd_History", UIParent)
+GDKPd.history = CreateFrame("Frame", "GDKPd_History", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local history = GDKPd.history
 history:SetSize(200,95)
 history:Hide()
@@ -654,7 +654,7 @@ history:SetBackdrop({
 		left=6,
 	},
 })
-history.header = CreateFrame("Button", nil, history)
+history.header = CreateFrame("Button", nil, history, BackdropTemplateMixin and "BackdropTemplate")
 history.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 history.header:SetSize(133,34)
 history.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -676,7 +676,7 @@ history:SetScript("OnShow", function(self)
 	self:Update()
 end)
 history.entries = setmetatable({},{__index=function(t,v)
-	local f = CreateFrame("Button", nil, history)
+	local f = CreateFrame("Button", nil, history, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -760,7 +760,7 @@ history.entries = setmetatable({},{__index=function(t,v)
 	t[v]=f
 	return f
 end})
-history.hide = CreateFrame("Button", nil, history, "UIPanelButtonTemplate")
+history.hide = CreateFrame("Button", nil, history, "UIPanelButtonTemplate", BackdropTemplateMixin and "BackdropTemplate")
 history.hide:SetSize(170,15)
 history.hide:SetPoint("BOTTOM", 0, 15)
 history.hide:SetText(L["Hide"])
@@ -787,7 +787,7 @@ function history:Update()
 	end
 	self:SetHeight(size)
 end
-GDKPd.itemsettings = CreateFrame("Frame", "GDKPd_ItemSettings", UIParent)
+GDKPd.itemsettings = CreateFrame("Frame", "GDKPd_ItemSettings", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local itemsettings = GDKPd.itemsettings
 itemsettings:SetWidth(250)
 itemsettings:Hide()
@@ -804,7 +804,7 @@ itemsettings:SetBackdrop({
 		left=6,
 	},
 })
-itemsettings.header = CreateFrame("Button", nil, itemsettings)
+itemsettings.header = CreateFrame("Button", nil, itemsettings, BackdropTemplateMixin and "BackdropTemplate")
 itemsettings.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 itemsettings.header:SetSize(133,34)
 itemsettings.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -825,7 +825,7 @@ itemsettings:SetPoint("TOP", itemsettings.header, "TOP", 0, -6)
 itemsettings:SetScript("OnShow", function(self)
 	self:Update()
 end)
-itemsettings.thead = CreateFrame("Frame", nil, itemsettings)
+itemsettings.thead = CreateFrame("Frame", nil, itemsettings, BackdropTemplateMixin and "BackdropTemplate")
 itemsettings.thead:SetPoint("TOPLEFT", 15, -15)
 itemsettings.thead:SetPoint("TOPRIGHT", -15, -15)
 itemsettings.thead:SetHeight(15)
@@ -847,9 +847,9 @@ itemsettings.thead.minincre:SetTextColor(1,0.82,0)
 itemsettings.thead.minincre:SetText(L["Minimum increment"])
 itemsettings.thead.minincre:SetPoint("LEFT", itemsettings.thead.startbid, "RIGHT")
 itemsettings.thead.minincre:SetPoint("RIGHT")
-itemsettings.scroll = CreateFrame("ScrollFrame", nil, itemsettings)
+itemsettings.scroll = CreateFrame("ScrollFrame", nil, itemsettings, BackdropTemplateMixin and "BackdropTemplate")
 itemsettings.scroll:SetPoint("TOPLEFT", itemsettings.thead, "BOTTOMLEFT", 0, -5)
-itemsettings.scroll.child = CreateFrame("Frame", nil, itemsettings.scroll)
+itemsettings.scroll.child = CreateFrame("Frame", nil, itemsettings.scroll, BackdropTemplateMixin and "BackdropTemplate")
 itemsettings.scroll.child:EnableMouseWheel(true)
 itemsettings.scroll.child:SetScript("OnMouseWheel", function(self, delta)
 	if delta == 1 then
@@ -865,7 +865,7 @@ itemsettings.scroll:SetScript("OnSizeChanged", function(self, width)
 	self:UpdateScrollChildRect()
 end)
 itemsettings.entries = setmetatable({}, {__index=function(t,v)
-	local f = CreateFrame("Frame", nil, itemsettings.scroll.child)
+	local f = CreateFrame("Frame", nil, itemsettings.scroll.child, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -874,7 +874,7 @@ itemsettings.entries = setmetatable({}, {__index=function(t,v)
 		f:SetPoint("TOPRIGHT"--[[, itemsettings.thead, "BOTTOMRIGHT", 0, -5--]])
 	end
 	f:SetHeight(15)
-	f.itemicon = CreateFrame("Button", nil, f)
+	f.itemicon = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	f.itemicon:SetScript("OnEnter", function()
 		if not f.itemID then return end
 		GameTooltip:ClearAllPoints()
@@ -917,7 +917,7 @@ itemsettings.entries = setmetatable({}, {__index=function(t,v)
 		end
 	end)
 	f.itemicon:EnableMouse(true)
-	f.minBid = CreateFrame("EditBox", nil, f)
+	f.minBid = CreateFrame("EditBox", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	f.minBid:SetMultiLine(nil)
 	f.minBid:SetScript("OnEditFocusGained", function(self) if not f.itemID then self:ClearFocus() end end)
 	f.minBid:SetScript("OnEnterPressed", function(self) GDKPd.opt.customItemSettings[f.itemID].minBid = self:GetNumber() > 0 and self:GetNumber() or nil self:ClearFocus() itemsettings:Update() end)
@@ -950,7 +950,7 @@ itemsettings.entries = setmetatable({}, {__index=function(t,v)
 	f.minBid.tex:SetPoint("BOTTOMRIGHT",f.minBid.g)
 	f.minBid.tex:SetAlpha(0.2)
 	f.minBid.tex:SetTexture(0.5,0.5,0.5)
-	f.minIncrement = CreateFrame("EditBox", nil, f)
+	f.minIncrement = CreateFrame("EditBox", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	f.minIncrement:SetMultiLine(nil)
 	f.minIncrement:SetScript("OnEditFocusGained", function(self) if not f.itemID then self:ClearFocus() end end)
 	f.minIncrement:SetScript("OnEnterPressed", function(self) GDKPd.opt.customItemSettings[f.itemID].minIncrement = self:GetNumber() > 0 and self:GetNumber() or nil self:ClearFocus() itemsettings:Update() end)
@@ -1022,13 +1022,13 @@ function itemsettings:Update()
 	self.scroll.child:SetHeight(20*(c-1)-5)
 	self:SetHeight(70+20*math.min(c-1,10))
 end
-itemsettings.hide = CreateFrame("Button", nil, itemsettings, "UIPanelButtonTemplate")
+itemsettings.hide = CreateFrame("Button", nil, itemsettings, "UIPanelButtonTemplate", BackdropTemplateMixin and "BackdropTemplate")
 itemsettings.hide:SetSize(220, 15)
 itemsettings.hide:SetPoint("BOTTOM", 0, 15)
 itemsettings.hide:SetText(L["Hide"])
 itemsettings.hide:SetScript("OnClick", function() itemsettings:Hide() end)
 itemsettings.scroll:SetPoint("BOTTOMRIGHT", itemsettings.hide, "TOPRIGHT", 0, 10)
-GDKPd.itemLevels = CreateFrame("Frame", "GDKPd_ItemLevels", UIParent)
+GDKPd.itemLevels = CreateFrame("Frame", "GDKPd_ItemLevels", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local itemlevels = GDKPd.itemLevels
 itemlevels:SetWidth(250)
 itemlevels:Hide()
@@ -1045,7 +1045,7 @@ itemlevels:SetBackdrop({
 		left=6,
 	},
 })
-itemlevels.header = CreateFrame("Button", nil, itemlevels)
+itemlevels.header = CreateFrame("Button", nil, itemlevels, BackdropTemplateMixin and "BackdropTemplate")
 itemlevels.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 itemlevels.header:SetSize(133,34)
 itemlevels.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -1066,7 +1066,7 @@ itemlevels:SetPoint("TOP", itemlevels.header, "TOP", 0 ,-6)
 itemlevels:SetScript("OnShow", function(self)
 	self:Update()
 end)
-itemlevels.thead = CreateFrame("Frame", nil, itemlevels)
+itemlevels.thead = CreateFrame("Frame", nil, itemlevels, BackdropTemplateMixin and "BackdropTemplate")
 itemlevels.thead:SetPoint("TOPLEFT", 15, -15)
 itemlevels.thead:SetPoint("TOPRIGHT", -15, -15)
 itemlevels.thead:SetHeight(15)
@@ -1099,7 +1099,7 @@ itemlevels.hide:SetSize(220,15)
 itemlevels.hide:SetPoint("BOTTOM", 0, 15)
 itemlevels.hide:SetText(L["Hide"])
 itemlevels.hide:SetScript("OnClick", function() itemlevels:Hide() end)
-itemlevels.add = CreateFrame("Frame", nil, itemlevels)
+itemlevels.add = CreateFrame("Frame", nil, itemlevels, BackdropTemplateMixin and "BackdropTemplate")
 itemlevels.add:SetPoint("BOTTOMLEFT", 15, 35)
 itemlevels.add:SetPoint("BOTTOMRIGHT", -15, 35)
 itemlevels.add:SetHeight(20)
@@ -1147,7 +1147,7 @@ itemlevels.add.mininc:SetNumeric(true)
 itemlevels.add.mininc:SetMaxLetters(5)
 itemlevels.add.mininc:SetScript("OnTabPressed", tabfunc)
 --itemlevels.add.mininc:SetJustifyH("RIGHT")
-itemlevels.add.add = CreateFrame("Button", nil, itemlevels.add)
+itemlevels.add.add = CreateFrame("Button", nil, itemlevels.add, BackdropTemplateMixin and "BackdropTemplate")
 itemlevels.add.add:SetSize(20,20)
 itemlevels.add.add:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up")
 itemlevels.add.add:SetHighlightTexture("Interface\\Buttons\\UI-PlusButton-Hilight")
@@ -1168,7 +1168,7 @@ itemlevels.add.add:SetScript("OnClick", function()
 	end
 end)
 itemlevels.entries = setmetatable({}, {__index=function(t,v)
-	local f = CreateFrame("Frame", nil, itemlevels)
+	local f = CreateFrame("Frame", nil, itemlevels, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -1207,7 +1207,7 @@ itemlevels.entries = setmetatable({}, {__index=function(t,v)
 		self.minbid:SetText(minbid.."|cffffd100g|r")
 		self.mininc:SetText(mininc.."|cffffd100g|r")
 	end
-	f.del = CreateFrame("Button", nil, f)
+	f.del = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	f.del:SetSize(15,15)
 	f.del:SetPoint("RIGHT", 5, 0)
 	f.del:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-UP")
@@ -1236,7 +1236,7 @@ function itemlevels:Update()
 	end
 	self:SetHeight(height)
 end
-GDKPd.version = CreateFrame("Frame", "GDKPd_Versions", UIParent)
+GDKPd.version = CreateFrame("Frame", "GDKPd_Versions", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local version = GDKPd.version
 version:SetSize(200,85)
 version:Hide()
@@ -1253,7 +1253,7 @@ version:SetBackdrop({
 		left=6,
 	},
 })
-version.header = CreateFrame("Button", nil, version)
+version.header = CreateFrame("Button", nil, version, BackdropTemplateMixin and "BackdropTemplate")
 version.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 version.header:SetSize(133,34)
 version.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -1275,7 +1275,7 @@ version:SetScript("OnShow", function(self)
 	self:Update()
 end)
 version.entries = setmetatable({},{__index=function(t,v)
-	local f = CreateFrame("Button", nil, version)
+	local f = CreateFrame("Button", nil, version, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -1415,7 +1415,7 @@ function GDKPd:MailBalanceGold(targetName)
 	GDKPd_PotData.playerBalance[targetName] = 0
 	self.balance:Update()
 end
-GDKPd.balance = CreateFrame("Frame", "GDKPd_PlayerBalance", status)
+GDKPd.balance = CreateFrame("Frame", "GDKPd_PlayerBalance", status, BackdropTemplateMixin and "BackdropTemplate")
 local balance = GDKPd.balance
 balance:SetSize(200, 95)
 balance:SetBackdrop({
@@ -1431,7 +1431,7 @@ balance:SetBackdrop({
 		left=6,
 	},
 })
-balance.header = CreateFrame("Button", nil, balance)
+balance.header = CreateFrame("Button", nil, balance, BackdropTemplateMixin and "BackdropTemplate")
 balance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 balance.header:SetSize(133,34)
 balance.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -1457,7 +1457,7 @@ balance:SetScript("OnShow", function(self)
 	self:Update()
 end)
 balance.entries = setmetatable({}, {__index=function(t,v)
-	local f = CreateFrame("Button", nil, balance)
+	local f = CreateFrame("Button", nil, balance, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -1591,7 +1591,7 @@ function balance:Update()
 		self:SetWidth(200)
 	end
 end
-GDKPd.playerBalance = CreateFrame("Frame", "GDKPd_PlayerBalance", UIParent)
+GDKPd.playerBalance = CreateFrame("Frame", "GDKPd_PlayerBalance", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local playerBalance = GDKPd.playerBalance
 playerBalance:SetSize(200, 95)
 playerBalance:SetBackdrop({
@@ -1607,7 +1607,7 @@ playerBalance:SetBackdrop({
 		left=6,
 	},
 })
-playerBalance.header = CreateFrame("Button", nil, playerBalance)
+playerBalance.header = CreateFrame("Button", nil, playerBalance, BackdropTemplateMixin and "BackdropTemplate")
 playerBalance.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 playerBalance.header:SetSize(133,34)
 playerBalance.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -1634,7 +1634,7 @@ playerBalance.reset:SetPoint("BOTTOM", 0, 15)
 playerBalance.reset:SetText(RESET)
 playerBalance.reset:SetScript("OnClick", function() GDKPd_BalanceData = setmetatable({},{__index=function() return 0 end}) GDKPd.playerBalance:Update() end)
 playerBalance.entries = setmetatable({}, {__index=function(t,v)
-	local f = CreateFrame("Button", nil, playerBalance)
+	local f = CreateFrame("Button", nil, playerBalance, BackdropTemplateMixin and "BackdropTemplate")
 	if v > 1 then
 		f:SetPoint("TOPLEFT", t[v-1], "BOTTOMLEFT", 0, -5)
 		f:SetPoint("TOPRIGHT", t[v-1], "BOTTOMRIGHT", 0, -5)
@@ -1709,7 +1709,7 @@ function playerBalance:Update()
 	self:SetHeight(size)
 	self:UpdateVisibility()
 end
-GDKPd.exportframe = CreateFrame("Frame", "GDKPd_Export", UIParent)
+GDKPd.exportframe = CreateFrame("Frame", "GDKPd_Export", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local export = GDKPd.exportframe
 export:Hide()
 export:SetBackdrop({
@@ -1725,7 +1725,7 @@ export:SetBackdrop({
 		left=6,
 	},
 })
-export.header = CreateFrame("Button", nil, export)
+export.header = CreateFrame("Button", nil, export, BackdropTemplateMixin and "BackdropTemplate")
 export.header:SetNormalTexture("Interface\\DialogFrame\\UI-DialogBox-Gold-Header")
 export.header:SetSize(133,34)
 export.header:SetHitRectInsets(31.5,31.5,4.5,14.5)
@@ -1742,7 +1742,7 @@ export.header:SetScript("OnMouseUp", function(self)
 	self:StopMovingOrSizing()
 end)
 export.header:SetPoint("TOP", history, "BOTTOM", 0, -10)
-export.box = CreateFrame("EditBox", nil, export)
+export.box = CreateFrame("EditBox", nil, export, BackdropTemplateMixin and "BackdropTemplate")
 export.box:SetMultiLine(true)
 export.box:SetAutoFocus(false)
 export.box:SetFont("Fonts\\FRIZQT__.TTF", 12)
@@ -2176,7 +2176,7 @@ function GDKPd:GetUnoccupiedFrame()
 		end
 		c=c+1
 	end
-	local f = CreateFrame("Frame", "GDKPdBidFrame"..c, UIParent)
+	local f = CreateFrame("Frame", "GDKPdBidFrame"..c, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	f:SetSize(300,60)
 	f:SetBackdrop({
 		bgFile="Interface\\Tooltips\\UI-Tooltip-Background",
@@ -2220,12 +2220,12 @@ function GDKPd:GetUnoccupiedFrame()
 	f.highestbidder:SetFont("Fonts\\FRIZQT__.TTF", 10, "")
 	f.highestbidder:SetTextColor(1,1,1)
 	f.highestbidder:SetPoint("TOPLEFT", f.curbid, "BOTTOMLEFT", 0, -5)
-	f.timer = CreateFrame("Cooldown",nil,f)
+	f.timer = CreateFrame("Cooldown",nil,f, BackdropTemplateMixin and "BackdropTemplate")
 	-- omnicc stuff
 	f.timer.noCooldownCount = true
 	f.timer:SetReverse(true)
 	f.timer:SetAllPoints(f.icon)
-	f.timer.update = CreateFrame("Frame")
+	f.timer.update = CreateFrame("Frame",nil,nil, BackdropTemplateMixin and "BackdropTemplate")
 	f.timer.update:Hide()
 	f.timer.update:SetScript("OnUpdate", function(self)
 		local timeRemain = self.endTime-GetTime()
@@ -2262,7 +2262,7 @@ function GDKPd:GetUnoccupiedFrame()
 		f.autobid:Show()
 		f.hide:Enable()
 	end)
-	f.bidbox = CreateFrame("EditBox", nil, f)
+	f.bidbox = CreateFrame("EditBox", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	f.bidbox:SetMultiLine(nil)
 	f.bidbox:SetScript("OnEditFocusGained", function(self)
 		if self.disabled then
@@ -2307,7 +2307,7 @@ function GDKPd:GetUnoccupiedFrame()
 		end
 	end)
 	f.bid:Disable()
-	f.bid.enabledelay = CreateFrame("Frame", nil, f.bid)
+	f.bid.enabledelay = CreateFrame("Frame", nil, f.bid, BackdropTemplateMixin and "BackdropTemplate")
 	f.bid.enabledelay:Hide()
 	f.bid.enabledelay:SetScript("OnUpdate", function(self)
 		if not self.reenabletime then self:Hide() return end
